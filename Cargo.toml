@@ -2,7 +2,11 @@
 name = "fubar-cli"
 version = "0.1.0"
 edition = "2021"
-
+authors = ["irishmaestro"]
+repository = "https://github.com/irishmaestro/fubar"
+description = "Formidable Unix Binary Arsenal & Repository"
+license = "GPL-3.0"
+categories = ["command-line-utilities"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [[bin]]
