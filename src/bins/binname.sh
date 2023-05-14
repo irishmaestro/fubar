@@ -1,0 +1,1 @@
+echo "pub static BIN_NAME: &'static str = \"gzip\";" >> gzip.rs
