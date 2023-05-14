@@ -1,5 +1,5 @@
 # Formidable Unix Binary Arsenal &amp; Repository
-
+![Crates.io](https://img.shields.io/crates/d/fubar-cli?color=orange&style=plastic)
 #### TUI application built with Rust utilizing payloads from gtfobins. Designed for power users.
 #### Note: this program is currently a prototype. If you encounter a bug, file an issue or submit a pull request. 
 ----
