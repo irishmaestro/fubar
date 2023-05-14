@@ -482,7 +482,7 @@ where
         )
         .split(area);
     let status = r#"This program is currently a prototype. Expect upcoming releases with new features. If you encounter a bug, file an issue on github."#;
-    let software_update = r#"cargo install gtfo"#;
+    let software_update = r#"cargo install fubar-cli"#;
     let create_block = |title| {
         Block::default()
             .borders(Borders::ALL)
