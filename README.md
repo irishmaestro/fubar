@@ -37,8 +37,11 @@ fubar
  
 -----            
 Thank you to Emilio Pinna, Andrea Cardaci, and all individuals that have contributed to the gtfobins project!
-- Website -> https://gtfobins.github.io/
-- Repository -> https://github.com/GTFOBins/GTFOBins.github.io
+
+| gtfobins   |  link |
+| ------------ | ------------ |
+| website  |  [https://gtfobins.github.io](https://gtfobins.github.io/ "Website") |
+|  repo |  [https://github.com/GTFOBins/GTFOBins.github.io](https://github.com/GTFOBins/GTFOBins.github.io "Repository") |
 ----
 DISCLAIMER OF LIABILITY:
 
