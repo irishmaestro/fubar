@@ -26,12 +26,15 @@ cargo install --path fubar
 fubar
 ```
 #### Navigation
-- ↑ ↓     navigate bins                   (up/down arrow keys)         
-- ⇛       navigate tabs                   (tab)
-- ↵       navigate payloads               (enter/return)
-- c       copy payload to clipboard
-- r       return to root page
-- q       quit application    
+| keybinding | action | desc |
+|-----------------|-----------------|-----------------|
+| ↑ ↓ | navigate bins | up/down |
+| ⇛ | navigate tabs | tab |
+| ↵ | navigate payloads | enter/return |
+| c | copy payloads to clipboard | |
+| r | return to root page | |
+| q | quit application | |
+ 
 -----            
 Thank you to Emilio Pinna, Andrea Cardaci, and all individuals that have contributed to the gtfobins project!
 - Website -> https://gtfobins.github.io/
