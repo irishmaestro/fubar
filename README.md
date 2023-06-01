@@ -5,9 +5,13 @@
 ![Crates.io](https://img.shields.io/crates/d/fubar-cli?color=orange&style=plastic)
 
 
-
-#### TUI application built with Rust utilizing payloads from gtfobins. Designed for power users.
-#### Note: this program is currently a prototype. If you encounter a bug, file an issue or submit a pull request. 
+### TUI built for offline payload generation, retrieval, and exfiltration.
+### Seamlessly navigate the intricate labyrinth of restrictive shell environments and privesc operations.
+### Designed for power users. 
+----
+#### Project status: the program is currently a prototype. There are many great features in the pipeline.
+#### The executable currently contains thousands of payloads from gtfobins to amplify your security research.
+#### If you have great ideas, consider submitting a pull request.
 ----
 ### Installation
 #### via cargo
