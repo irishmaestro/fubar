@@ -3,6 +3,8 @@
 ![fubar-image](https://github.com/IrishMaestro/fubar/assets/70972101/8334863d-675d-4f03-993b-707f7818cd04)
 
 ![Crates.io](https://img.shields.io/crates/d/fubar-cli?color=orange&style=plastic)
+![security.yml](https://github.com/irishmaestro/fubar/actions/workflows/security.yml/badge.svg)
+
 
 
 ### TUI built for offline payload generation, retrieval, and exfiltration.
