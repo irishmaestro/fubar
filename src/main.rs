@@ -27,6 +27,9 @@ use tags::*;
 mod utils;
 use utils::copy_payload;
 
+#[macro_use]
+extern crate lazy_static; // work in progress
+
 struct BinList<T> {
     state: ListState,
     bins: Vec<T>,
