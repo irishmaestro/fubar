@@ -5,18 +5,18 @@ use crossterm::{
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
+use ratatui::{
+    backend::{Backend, CrosstermBackend},
+    layout::{Constraint, Direction, Layout, Rect},
+    style::{Color, Modifier, Style},
+    text::{Line, Span, Text},
+    widgets::{Block, BorderType, Borders, List, ListItem, ListState, Paragraph, Tabs, Wrap},
+    Frame, Terminal,
+};
 use std::{
     error::Error,
     io,
     time::{Duration, Instant},
-};
-use tui::{
-    backend::{Backend, CrosstermBackend},
-    layout::{Constraint, Direction, Layout, Rect},
-    style::{Color, Modifier, Style},
-    text::{Span, Spans, Text},
-    widgets::{Block, BorderType, Borders, List, ListItem, ListState, Paragraph, Tabs, Wrap},
-    Frame, Terminal,
 };
 mod bins;
 use bins::{bin_list, get_code, get_tags};
@@ -236,10 +236,7 @@ fn constraint_len(payload: &str) -> Constraint {
     Constraint::Length(payload.lines().count() as u16)
 }
 
-fn render_bin<B>(f: &mut Frame<B>, app: &App, area: Rect)
-where
-    B: Backend,
-{
+fn render_bin(f: &mut Frame, app: &App, area: Rect) {
     let chunks = Layout::default()
         .direction(Direction::Vertical)
         .horizontal_margin(4)
@@ -262,7 +259,7 @@ where
         .iter()
         .map(|t| {
             let (first, rest) = t.split_at(1);
-            Spans::from(vec![
+            Line::from(vec![
                 Span::styled(first, Style::default().fg(Color::Yellow)),
                 Span::styled(rest, Style::default().fg(Color::Green)),
             ])
@@ -428,7 +425,7 @@ fn run_app<B: Backend>(
     }
 }
 
-fn client<B: Backend>(f: &mut Frame<B>, app: &mut App) {
+fn client(f: &mut Frame, app: &mut App) {
     let main_layout = Layout::default()
         .direction(Direction::Horizontal)
         .constraints([Constraint::Percentage(18), Constraint::Percentage(82)].as_ref())
@@ -438,7 +435,7 @@ fn client<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .bins
         .iter()
         .map(|i| {
-            let lines = vec![Spans::from(*i)];
+            let lines = vec![Line::from(*i)];
             ListItem::new(lines).style(
                 Style::default()
                     .fg(Color::Green)
@@ -467,10 +464,7 @@ fn client<B: Backend>(f: &mut Frame<B>, app: &mut App) {
     }
 }
 
-fn render_root<B>(f: &mut Frame<B>, area: Rect)
-where
-    B: Backend,
-{
+fn render_root(f: &mut Frame, area: Rect) {
     let chunks = Layout::default()
         .direction(Direction::Vertical)
         .constraints(
@@ -489,7 +483,7 @@ where
     let create_block = |title| {
         Block::default()
             .borders(Borders::ALL)
-            .border_type(tui::widgets::BorderType::Rounded)
+            .border_type(ratatui::widgets::BorderType::Rounded)
             .style(Style::default().fg(Color::White))
             .title(Span::styled(
                 title,
@@ -542,7 +536,7 @@ where
     ];
     let mut desc_vec = vec![];
     for x in descriptions {
-        let d = Spans::from(vec![
+        let d = Line::from(vec![
             Span::styled(x.0, name_style),
             Span::styled(format!("    {}", x.1), style),
         ]);
@@ -550,7 +544,7 @@ where
         // desc_vec.push(Spans::from(vec![Span::raw("")]));
     }
     let root = Paragraph::new(desc_vec)
-        .alignment(tui::layout::Alignment::Left)
+        .alignment(ratatui::layout::Alignment::Left)
         .wrap(Wrap { trim: false })
         .block(
             Block::default()
