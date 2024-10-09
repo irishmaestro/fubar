@@ -15,8 +15,7 @@ path = "src/main.rs"
 
 
 [dependencies]
-arboard = "3.2.0"
+arboard = { version = "3.2", features = ["wayland-data-control"] }
 crossterm = "0.26.1"
 lazy_static = "1.4.0"
 ratatui = "0.24.0"
-# tui-textarea = "0.2.0" # may use this for customizing payloads
